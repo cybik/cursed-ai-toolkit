@@ -8,21 +8,25 @@ Rufus is an "AI" cursed horror that poses as a CS rep. If I wanted to be bothere
 
 I found a base block on the [hollymathnerd substack](https://hollymathnerd.substack.com/p/how-to-kill-rufus), but it didn't work from the jump as of December 31st, 2025.
 
-This form is what worked; it's a minor adjustment. This works as a user-provided custom filter in Brave Shield, and I'm assuming it would work the same in UBlock Origin.
+This form is what worked; it's a minor adjustment. This works as a user-provided custom filter in Brave Shield, and I'm assuming it would work the same in UBlock Origin. Oh, and applies on a bunch of the subsites. The only issue here is the copilot blockers are only-dotcom for now but I'll adjust later, if I care enough.
 
 ```
-amazon.com##.copilot-modal-container
-amazon.com##div[data-copilot-name]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##.copilot-modal-container
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##div[data-copilot-name]
 ||amazon.com/*copilot*^$script
 ||images-na.ssl-images-amazon.com/images/*copilot*^$script
 ||m.media-amazon.com/images/*copilot*^$script
-amazon.com##aside[data-copilot-chat-root]
-amazon.com##div.copilot-chat-root
-amazon.com##.left-nav-container
-amazon.com##div[style*="left: 0px"][style*="position"]
-amazon.com##.rufus-asin-faceout-header-left
-amazon.com##[class^=”rufus-”]
-amazon.com##div.rufus-chat-container
-amazon.com##div.rufus-panel-container
-amazon.com##body.rufus-docked-left:style(padding-left:0 !important; margin-left:0 !important;)
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##aside[data-copilot-chat-root]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##div.copilot-chat-root
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##.left-nav-container
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##div[style*="left: 0px"][style*="position"]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##.rufus-asin-faceout-header-left
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##[class^="rufus-"]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##[class^="nav-rufus-"]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##[id^="nav-rufus-"]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##[id^="rufus-"]
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##div.rufus-chat-container
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##div.rufus-panel-container
+amazon.com,amazon.ca,amazon.fr,amazon.de,amazon.co.jp##body.rufus-docked-left:style(padding-left:0 !important; margin-left:0 !important;)
+
 ```
